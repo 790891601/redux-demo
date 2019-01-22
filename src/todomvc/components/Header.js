@@ -5,12 +5,10 @@ import TodoInputText from "../components/TodoInputText"
 const Header = ({ addTodo }) => {
   return <header className="header">
     <h1>Todos</h1>
-    <TodoInputText onSave={ (e) => {
-      if(e.keyCode === 13 && e.target.value.length > 0) {
-        addTodo(e.target.value)
-        e.target.value = ""
-      }
-    }} />
+    <TodoInputText onSave={ addTodo }
+      newTodo={ true }
+      placeholder="What needs to be done?"
+    />
   </header>
 }
 
